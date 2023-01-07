@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            gap:10px;           
+        }
+        .up{
+            display: flex;
+            flex-direction: column;
+            gap:20px;
+            font-size: 20px;
+        }
+        h1{
+            font-size: 35px;
+        }
+
+        li{
+            margin-left: 40px;
+            margin-bottom: 10px;
+        }
+       .mylist{
+        margin-left: 50px;
+       }
+    </style>
+</head>
+<body>
+    <div class="up">
+        <h1>My Shoping List</h1>
+        <label for=>
+            Enter a new item:
+            <input id="input" type="text">
+            <button onclick="myadd()">Add item</button>
+        </label>
+    </div>
+    <div id="lower">
+    </div>
+    <script>
+        var i=0;
+        function myadd(){
+        inputs = document.getElementById("input")
+        let list=document.createElement("li")
+        console.log(list)
+        att=document.createAttribute("id")
+        att.value=`list${i}`
+
+        list.setAttributeNode(att)
+        val = list.innerHTML=`${input.value} <button class="mylist" class="" onclick="myremove(${i})">remove</button>`
+        document.getElementById("lower").appendChild(list)
+        console.log(val)
+        i++;
+        inputs.value=""
+        }
+        function myremove(i){
+        console.log(`buttons${i}`)
+        elem= document.getElementById(`list${i}`)
+        console
+        elem.remove()
+        }
+
+    </script>
+
+</body>
+</html>
